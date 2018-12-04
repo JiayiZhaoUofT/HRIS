@@ -1,0 +1,96 @@
+<html>
+  <head>
+    <title>add</title>
+      <style>
+          body {font-family: Arial, Helvetica, sans-serif; }
+    form {
+    border: 3px solid #f1f1f1;
+    border-radius: 12px;
+    width: 50%;
+    padding: 8px;
+    position:relative;
+    left:25%;
+    }
+    button:hover, input:hover {
+    opacity: 0.8;
+    }
+.mid1{
+  position:relative;
+  left:25%;
+}
+
+.mid2{
+  position:relative;
+  left:40%;
+}
+
+    input[type=text]{
+        width: 50%;
+        padding: 10px 10px;
+        margin: 8px 8px;
+        display: inline-block;
+        box-sizing: border-box;
+        background-color: #F5F5F5;
+        }
+    .buttonholder {
+    text-align: center;
+    width:25%;
+    padding: 8px;
+    position:relative;
+    left:37%;
+    }
+    button{
+    background-color: #1E90FF;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 12px;
+    cursor: pointer;
+    width: 50%;
+    font-weight: bold;
+    font-size: 20px
+    }
+    @media screen and (max-width:600px) {
+
+    input[type=text]{
+    width: 100%;
+    padding: 12px 12px;
+    margin: 8px;
+    display: inline-block;
+    box-sizing: border-box;
+    }
+
+    button{
+      background-color: #1E90FF;
+      color: white;
+      padding: 14px 20px;
+      margin: 8px 0;
+      border: none;
+      border-radius: 12px;
+      cursor: pointer;
+      width: 50%;
+      font-weight: bold;
+      font-size: 20px
+    }
+    }
+      </style>
+  </head>
+  <body>
+          <h2 class="mid2">Add New Position and Desired Skills</h2>
+      <form style = "border:None;" action="{{url_for('displayPosition')}}" method='POST'>
+          <div class = "buttonholder">
+              <button type='submit'>Back</button>
+          </div>
+      </form>
+      <form method = 'POST' action="{{url_for('addNewJob')}}">
+
+          <input class ="mid1" type = 'text' name='position' placeholder="Enter position name">
+          <input type  = 'text' class ="mid1"  name='skills' placeholder="Enter desired skills and separate by comma">
+
+          <div class = "buttonholder">
+              <button type="submit">Add</button>
+          </div>
+      <form>
+  </body>
+</html>

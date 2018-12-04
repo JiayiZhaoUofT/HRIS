@@ -1,0 +1,123 @@
+<html>
+  <head>
+    <title>view</title>
+      <style>
+            body {font-family: Arial, Helvetica, sans-serif; }
+        .list {
+        width: 50%;
+        padding: 30px;
+        position:relative;
+        left:25%;
+        border: 3px solid #f1f1f1;
+    border-radius: 12px;
+        }
+    .mid1{
+        position:relative;
+        left:48%;
+        }
+        button:hover {
+        opacity: 0.8;
+        }
+        input[type=text]{
+        width: 25%;
+        padding: 10px 10px;
+        margin: 8px 8px;
+        display: inline-block;
+        box-sizing: border-box;
+        background-color: #F5F5F5;
+        position:relative;
+        left:30%;
+        }
+        button{
+        background-color: #1E90FF;
+        color: white;
+        padding: 10px;
+        border: none;
+        border-radius: 12px;
+        cursor: pointer;
+        width: 50%;
+        font-weight: bold;
+        font-size: 25px;
+
+        }
+        .container {
+        padding: 8px;
+        }
+
+        label {
+        display: block;
+        font-size: 20px;
+        position:relative;
+        left:30%;
+        }
+         td{
+                width: 300px;
+                text-align: center;
+            }
+         th{
+            width: 300px;
+                text-align: center;
+                 font-weight: bold;
+         }
+            .buttonholder {
+          text-align: center;
+          width: 15%;
+          padding: 10px;
+          margin: 10px;
+          position:relative;
+          left:42.5%;
+    }
+    table
+    {
+        border:solid 2px #f1f1f1;
+        padding: 15px;
+    }
+
+        @media screen and (max-width:600px) {
+
+        input[type=text]{
+        width: 100%;
+        padding: 12px 12px;
+        margin: 8px;
+        display: inline-block;
+        box-sizing: border-box;
+        }
+        }
+      </style>
+  </head>
+  <body>
+
+     <h2 class="mid1">Resumes</h2>
+
+      <form method = 'POST' action="{{url_for('displayPosition')}}">
+        <div class="buttonholder">
+        <button type="submit">Back</button>
+        </div>
+      </form>
+     <form method = 'POST' action="{{url_for('logout')}}">
+        <div class="buttonholder">
+        <button type="submit">Logout</button>
+        </div>
+      </form>
+      <div class = "list">
+        {%for row in skill_freq%}
+          {% set outer_loop = loop.index0 %}
+          <table>
+              <h1><caption><a href="{{resumes[outer_loop]}}" target="_blank">View Resume</a></caption></h1>
+              <h1><caption><a href="{{url_for('view_resume', candidateid = candidateids[outer_loop])}}" target="_blank">preview Resume</a></caption></h1>
+
+            <th><h2>{{emails[outer_loop]}}</h2><br /><h2>{{phones[outer_loop]}}</h2></th>
+            <th><h2>Skill</h2></th>
+            <th><h2>Frequency</h2></th>
+                    {%for key, val in row.items()%}
+                        <tr>
+                            <td><h3></h3></td>
+                            <td><h3>{{key}}</h3></td>
+                            <td><h3>{{val}}</h3></td>
+                        </tr>
+                    {% endfor %}
+                 </table>
+           {% endfor %}
+    </div>
+  </body>
+</html>

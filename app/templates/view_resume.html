@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="/static/viewResume.css">
+</head>
+<body>
+    <div class = "outside-container">
+        <div class = 'resume-container'>
+            <embed src={{resume}} type="application/pdf" width="100%" height="800px" />
+        </div>
+
+        <div class = 'form-container'>
+            <div id="form-main">
+                  <div id="form-div">
+                        <form class="form" id="form1">
+                             <div class="">
+                                  <label for="soft-skills">1. How is the soft skills?</label>
+                                  <select class="required input-mini" id="soft-skills"><option value=""></option>
+                                      <option value="2">4 ft.</option>
+                                      <option value="1">5 ft.</option>
+                                      <option value="0">6 ft.</option>
+                                      <option value="-1">7 ft.</option>
+                                      <option value="-2">7 ft.</option>
+                                  </select>
+                             </div>
+                             <div class="">
+                                   <label for="minimum-requirement">2. Does the candidate match the minimum requirenment?</label>
+                                   <select class="required input-mini" id="minimum-requirement"><option value=""></option>
+                                       <option value="2">4 ft.</option>
+                                       <option value="1">5 ft.</option>
+                                       <option value="0">6 ft.</option>
+                                       <option value="-1">7 ft.</option>
+                                       <option value="-2">7 ft.</option>
+                                   </select>
+                             </div>
+                             <div class="">
+                                   <label for="preferred-requirement">3. Does the candidate have the preferred skills?</label>
+                                   <select class="required input-mini" id="preferred-requirement"><option value=""></option>
+                                       <option value="2">4 ft.</option>
+                                       <option value="1">5 ft.</option>
+                                       <option value="0">6 ft.</option>
+                                       <option value="-1">7 ft.</option>
+                                       <option value="-2">7 ft.</option>
+                                   </select>
+                             </div>
+                             <div class="">
+                                 <label>4. Rate the candidate</label><br>
+                                 <input type="radio" name="options" id="option1" value="option1"><label for="option1">good</label>
+                                 <input type="radio" name="options" id="option2" value="option2"><label for="option2">average</label>
+                                 <input type="radio" name="options" id="option3" value="option3"><label for="option3">not bad</label>
+                                 <input type="radio" name="options" id="option4" value="option4"><label for="option4">poor</label>
+                             </div>
+                             <div>
+                                 <label>5. Add comment</label>
+                                  <p class="text">
+                                      <textarea name="text" class="validate[required,length[6,300]] feedback-input" id="comment" placeholder="Comment"></textarea>
+                                  </p>
+                             </div>
+
+                             <button type = "submit" id="send-button">Send</button>
+                        </form>
+                  </div>
+        </div>
+
+    </div>
+</body>
+
+</html>
+

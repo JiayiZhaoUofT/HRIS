@@ -1,0 +1,102 @@
+<html>
+  <head>
+    <title>upload</title>
+    <style>
+      body {font-family: Arial, Helvetica, sans-serif; }
+    form {
+    border: 3px solid #f1f1f1;
+    border-radius: 12px;
+    width: 50%;
+    padding: 8px;
+    position:relative;
+    left:25%;
+    }
+    button:hover, input:hover {
+    opacity: 0.8;
+    }
+.mid{
+  position:relative;
+  left:45%;
+}
+
+    input[type=file]{
+    width: 100%;
+    padding: 15px 15px;
+    margin: 8px 0;
+    display: inline-block;
+    box-sizing: border-box;
+    background-color: #1E90FF;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 12px;
+    cursor: pointer;
+    width: 100%;
+    font-weight: bold;
+    font-size: 15px
+    }
+    .buttonholder {
+    text-align: center;
+    width:25%;
+    padding: 8px;
+    position:relative;
+    left:35%;
+    }
+    button{
+    background-color: #1E90FF;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 12px;
+    cursor: pointer;
+    width: 50%;
+    font-weight: bold;
+    font-size: 20px
+    }
+    @media screen and (max-width:600px) {
+
+    input[type=file]{
+    width: 100%;
+    padding: 12px 12px;
+    margin: 8px;
+    display: inline-block;
+    box-sizing: border-box;
+    }
+
+    button{
+      background-color: #1E90FF;
+      color: white;
+      padding: 14px 20px;
+      margin: 8px 0;
+      border: none;
+      border-radius: 12px;
+      cursor: pointer;
+      width: 50%;
+      font-weight: bold;
+      font-size: 20px
+    }
+    }
+    </style>
+  </head>
+  <body>
+        <h2 class="mid">Upload Resume</h2>
+    <form style = "border:None;" action="{{url_for('displayPosition')}}" method='POST'>
+      <div class = "buttonholder">
+        <button type='submit'>Back</button>
+        </div>
+    </form>
+        <form style = "border:None;" method = 'POST' action="{{url_for('logout')}}">
+        <div class="buttonholder">
+        <button type="submit">Logout</button>
+        </div>
+      </form>
+    <form method = 'POST' action="{{url_for('upload_submit',mID = mID, pID = pID)}}" enctype="multipart/form-data">
+      <div class = "buttonholder">
+        <input type = "file" name= "resume" accept = ".pdf"/>
+        <button type="submit">Submit</button>
+      </div>
+    </form>
+  </body>
+</html>
